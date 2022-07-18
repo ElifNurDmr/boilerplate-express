@@ -22,8 +22,7 @@ if (!process.env.DISABLE_XORIGIN) {
 
 
   app.get('/',(req, res, next) => {
-    console.log("Hello Express")
-    res.status(200).json('Hello Express')
+    res.send("Hello Express");
   })
 }
 
