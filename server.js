@@ -7,7 +7,6 @@ var bGround = require('fcc-express-bground');
 var myApp = require('./myApp');
 var express = require('express');
 var app = express();
-const absolutePath = __dirname + relativePath/file.ext
 
 
 if (!process.env.DISABLE_XORIGIN) {
@@ -24,7 +23,7 @@ if (!process.env.DISABLE_XORIGIN) {
 
 
   app.get('/',(req, res, next) => {
-    res.send(absolutePath);
+    res.sendFile(__dirname + "/views/index.html");
   })
 }
 
