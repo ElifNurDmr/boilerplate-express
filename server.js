@@ -8,12 +8,9 @@ var myApp = require('./myApp');
 var express = require('express');
 var app = express();
 
+app.use("/public", express.static(__dirname + "/public"));
 
 if (!process.env.DISABLE_XORIGIN) {
-
-  app.use('/public', express.static(__dirname + '/public'));
-
-
   app.use(function(req, res, next) {
     var allowedOrigins = ['https://narrow-plane.gomix.me', 'https://www.freecodecamp.com'];
     var origin = req.headers.origin || '*';
