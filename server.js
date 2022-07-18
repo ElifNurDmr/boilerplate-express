@@ -19,6 +19,12 @@ if (!process.env.DISABLE_XORIGIN) {
     }
     next();
   });
+
+
+  app.get('/',(req, res, next) => {
+    console.log("Hello Express")
+    res.status(200).json({message : "Ok"})
+  })
 }
 
 var port = process.env.PORT || 3000;
